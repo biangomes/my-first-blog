@@ -8,10 +8,20 @@
     <title>Blog Django Girls Tutorial by Beatriz G.</title>
 </head>
 <body>
-    <div>
+    </div>
         <h1><a href="/">Blog Django Girls</a></h1>
     </div>
 
+    <div>
+        {% for post in posts %}
+            <div>
+                <p><i>Published: {{ post.created_at }}</i></p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <!--
     <div>
         <p>Publicado em: 21.12.2021, 18:00:00</p>
         <h2><a href="">Meu primeiro post</a></h2>
@@ -28,6 +38,6 @@
         <p>Publicado em: 21.12.2021, 18:04:03</p>
         <h2><a href="">Meu terceiro post</a></h2>
         <p>Aenean eu leo quam. Aenean eu leo quam.</p>
-    </div>
+    </div>-->
 </body>
 </html>
